@@ -1,0 +1,287 @@
+I am learning Python chapter-by-chapter and using this file as my current chapter:
+
+[CHAPTER / FILE NAME]
+
+Act as my Python mentor.
+
+IMPORTANT:
+I am learning Python for future BACKEND ENGINEERING and AI ENGINEERING.
+I want to understand Python properly, but I do NOT want unnecessary advanced theory at this stage.
+
+For this chapter, follow the structure below.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. CHECK MY CHAPTER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+First identify ALL important concepts, subtopics, operations, methods, syntax and common techniques that belong to this chapter.
+
+Assume the tutorial/video I watched may have skipped something.
+
+Tell me:
+
+- What concepts I MUST know
+- What concepts are commonly skipped
+- Important Python operations/methods
+- Common patterns
+- Important edge cases
+- Common mistakes
+- Pythonic ways of doing things
+
+Do not assume that because something is not in my code, I already know it.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2. CODE EXAMPLES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+For every important concept, give small, practical Python examples.
+
+Prefer:
+
+- short code
+- multiple small examples
+- real operations
+- input → operation → output
+- examples that I can actually run
+
+Do NOT give huge projects here.
+
+For example, if the topic is lists, cover useful operations such as:
+
+- indexing
+- slicing
+- append
+- extend
+- insert
+- remove
+- pop
+- sort
+- sorted
+- reverse
+- copying
+- iteration
+- list comprehension
+- nested lists
+- unpacking
+- useful built-in functions
+
+Only include operations that are genuinely useful.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+3. "USED LATER" GLIMPSE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+This section is VERY IMPORTANT.
+
+Look at every concept in this chapter and identify whether it will be useful later in:
+
+A. Backend engineering
+B. AI/ML engineering
+C. APIs / FastAPI
+D. Databases
+E. Data processing
+F. RAG / LLM applications
+G. Async/concurrent programming
+H. Distributed systems
+
+For each relevant concept, explain ONLY a short glimpse:
+
+Concept:
+Why it matters later:
+Where I may see it later:
+
+Example:
+
+LISTS
+
+Backend:
+API responses often contain lists of objects.
+
+AI:
+Retrieved documents/chunks are commonly represented as lists.
+
+RAG:
+Retrieved chunks may be stored and processed as a list.
+
+Do NOT teach the advanced topic now.
+Just show me the connection so I recognize it when I encounter it later.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+4. IMPORTANT PYTHON TECHNIQUES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Identify basic Python techniques that will become important later.
+
+Examples:
+
+- slicing
+- unpacking
+- comprehensions
+- enumerate()
+- zip()
+- map/filter/reduce where appropriate
+- any/all
+- sorted with key=
+- lambda
+- dictionary manipulation
+- set operations
+- shallow vs deep copy
+- mutable vs immutable objects
+- references
+- truthiness
+- *args / **kwargs
+- iteration
+- generators
+
+If a technique belongs to a later chapter, DON'T teach it deeply.
+
+Instead say:
+
+"⚡ You'll learn this properly later, but recognize this pattern."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+5. INTERVIEW / MIND-TWISTING QUESTIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+At the end, give me 5–10 questions related to THIS chapter.
+
+Mix:
+
+- basic interview questions
+- output prediction
+- debugging
+- conceptual traps
+- "why does Python behave this way?"
+- small coding problems
+- edge cases
+
+Gradually increase difficulty:
+
+Easy → Medium → Tricky
+
+DO NOT give answers immediately.
+
+Give:
+
+QUESTION
+
+Then let me attempt it.
+
+After the questions, provide a separate:
+
+"ANSWERS + EXPLANATIONS"
+
+section.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+6. COMMON INTERVIEW TRAPS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Give me the most important traps related to this chapter.
+
+Examples:
+
+- mutable vs immutable
+- aliasing
+- shallow copy vs deep copy
+- == vs is
+- list reference behavior
+- tuple containing mutable objects
+- modifying a collection while iterating
+- unexpected slicing behavior
+
+Only include traps relevant to the current chapter.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+7. MINI PRACTICE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Give me 3–5 small coding exercises.
+
+Difficulty:
+
+1. Easy
+2. Easy/Medium
+3. Medium
+4. Tricky
+5. Interview-style
+
+The exercises should require me to actually manipulate the concepts from this chapter.
+
+Do not give solutions immediately.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+8. FUTURE ROADMAP CONNECTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+At the very end, show:
+
+CURRENT CHAPTER
+      ↓
+WHAT I LEARNED
+      ↓
+WHERE IT WILL APPEAR LATER
+      ↓
+BACKEND / AI APPLICATION
+
+Example:
+
+Lists
+ ↓
+collections + iteration
+ ↓
+API responses / DB results
+ ↓
+RAG retrieved chunks
+ ↓
+AI pipelines
+
+Keep this section short.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+9. DO NOT OVERTEACH
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+VERY IMPORTANT:
+
+Do NOT introduce advanced backend, AI, distributed systems,
+or architecture concepts in depth while teaching basic Python.
+
+Only give me a "glimpse" of future relevance.
+
+I want to learn concepts in the correct order.
+
+If something is advanced, label it:
+
+[LEARN LATER]
+
+and give me only 1–3 sentences explaining why it matters.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+10. FINAL CHECKLIST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Finish with:
+
+✓ MUST KNOW
+⚡ GOOD TO KNOW
+🔮 LEARN LATER
+🎯 USED IN BACKEND
+🤖 USED IN AI ENGINEERING
+💼 INTERVIEW IMPORTANT
+
+Keep the final checklist concise.
+
+My goal is:
+
+Python fundamentals
+→ Production Python
+→ FastAPI/backend
+→ Databases
+→ Distributed systems
+→ AI/LLM engineering
+→ RAG/Agents
+→ Production AI systems
+
+Teach me with that long-term progression in mind.
+and update all codes in the file
