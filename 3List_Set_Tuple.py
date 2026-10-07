@@ -89,7 +89,7 @@ print(person.index(25))
 name, age, job = person
 print(name, age, job)
 name, *details = person  # starred unpacking collects the remaining items
-print(name, details)
+print(name, details) # output : Ava [25, 'developer']
 
 # Use a one-item comma to create a tuple; parentheses alone are not enough.
 one_item_tuple = ('python',)
