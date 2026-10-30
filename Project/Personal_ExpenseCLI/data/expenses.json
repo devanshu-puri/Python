@@ -1,0 +1,14 @@
+[
+    {
+        "amount": 500.0,
+        "category": "food",
+        "description": "biryani",
+        "date": "2026-10-27"
+    },
+    {
+        "amount": 1000.0,
+        "category": "electronic",
+        "description": "gaming mouse",
+        "date": "2026-10-30"
+    }
+]
