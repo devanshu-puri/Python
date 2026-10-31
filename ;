@@ -1,0 +1,191 @@
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'journey.json', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/Python_Application/01_zip_dictionary_mapping.py b/Python_Application/01_zip_dictionary_mapping.py[m
+[1mindex b11a95f..83eabd1 100644[m
+[1m--- a/Python_Application/01_zip_dictionary_mapping.py[m
+[1m+++ b/Python_Application/01_zip_dictionary_mapping.py[m
+[36m@@ -1,79 +1,279 @@[m
+[32m+[m
+ """Module 1 - Pair users with roles using zip and a dictionary."""[m
+ [m
+[31m-# 1. Real-World Scenario[m
+[31m-# An access service receives user names and their roles in matching order.[m
+[32m+[m[32m# 1. REAL-WORLD SCENARIO[m
+[32m+[m[32m# An access-control service receives two lists:[m
+[32m+[m[32m# - users: usernames[m
+[32m+[m[32m# - roles: the role assigned to each username at the same index[m
+[32m+[m[32m#[m
+[32m+[m[32m# For example:[m
+[32m+[m[32m# users[0] = 'ava' corresponds to roles[0] = 'admin'.[m
+[32m+[m
+ [m
+[31m-# 2. The Challenge[m
+[32m+[m[32m# 2. THE CHALLENGE[m
+ users = ['ava', 'sam', 'mia'][m
+ roles = ['admin', 'editor', 'viewer'][m
+[31m-# Build user_to_role, then find all users who can edit content.[m
+ [m
+[31m-# 3. My Current Python Toolkit[m
+[31m-# zip pairs related values; dict stores fast key -> value lookups; a loop filters results.[m
+[32m+[m[32m# Task A:[m
+[32m+[m[32m# Create a dictionary named user_to_role that maps each[m
+[32m+[m[32m# username to its corresponding role.[m
+[32m+[m[32m#[m
+[32m+[m[32m# Expected dictionary:[m
+[32m+[m[32m# {[m
+[32m+[m[32m#     'ava': 'admin',[m
+[32m+[m[32m#     'sam': 'editor',[m
+[32m+[m[32m#     'mia': 'viewer'[m
+[32m+[m[32m# }[m
+[32m+[m[32m#[m
+[32m+[m[32m# Task B:[m
+[32m+[m[32m# Create a list named editors containing all users whose[m
+[32m+[m[32m# role allows them to edit content.[m
+[32m+[m[32m#[m
+[32m+[m[32m# RULE: Both 'admin' and 'editor' roles can edit.[m
+[32m+[m[32m#[m
+[32m+[m[32m# Expected list:[m
+[32m+[m[32m# ['ava', 'sam'][m
+[32m+[m
+[32m+[m
+[32m+[m[32m# 3. MY CURRENT PYTHON TOOLKIT[m
+[32m+[m[32m# Use these concepts:[m
+[32m+[m[32m# - zip(users, roles): pairs usernames with their roles.[m
+[32m+[m[32m# - dict(...): creates a dictionary from key-value pairs.[m
+[32m+[m[32m# - .items(): iterates over dictionary keys and values.[m
+[32m+[m[32m# - List comprehension: filters users based on their roles.[m
+[32m+[m
+ [m
+[31m-# 4. Think Before Coding[m
+[31m-# What happens if the lists have different lengths? What should duplicate roles mean?[m
+[32m+[m[32m# 4. THINK BEFORE CODING[m
+ [m
+[31m-# 5. Try It Yourself[m
+[31m-# Pause here and build the mapping before reading the solutions.[m
+[32m+[m[32m# Q1. What happens if the lists have different lengths?[m
+[32m+[m[32m#[m
+[32m+[m[32m# Consider this specific input:[m
+[32m+[m[32m# users = ['ava', 'sam', 'mia'][m
+[32m+[m[32m# roles = ['admin', 'editor'][m
+[32m+[m[32m#[m
+[32m+[m[32m# TASK: Predict the result of dict(zip(users, roles)).[m
+[32m+[m[32m# Assume zip() uses its default behavior.[m
+[32m+[m[32m#[m
+[32m+[m[32m# Q2. What should duplicate roles mean?[m
+[32m+[m[32m#[m
+[32m+[m[32m# Consider this specific input:[m
+[32m+[m[32m# users = ['ava', 'sam'][m
+[32m+[m[32m# roles = ['editor', 'editor'][m
+[32m+[m[32m#[m
+[32m+[m[32m# TASK: Explain whether both users can have the same role.[m
+[32m+[m[32m#[m
+[32m+[m[32m# Also consider:[m
+[32m+[m[32m# users = ['ava', 'ava'][m
+[32m+[m[32m# roles = ['admin', 'viewer'][m
+[32m+[m[32m#[m
+[32m+[m[32m# TASK: Predict what dict(zip(users, roles)) produces.[m
+[32m+[m[32m# Explain why the result occurs.[m
+[32m+[m[32m#[m
+[32m+[m[32m# ASSUMPTIONS FOR THIS MODULE:[m
+[32m+[m[32m# - Every user should have exactly one role.[m
+[32m+[m[32m# - Duplicate role values are allowed.[m
+[32m+[m[32m# - Duplicate usernames are invalid input and should be[m
+[32m+[m[32m#   detected in a production implementation.[m
+[32m+[m[32m# - The main exercise uses equal-length lists with unique users.[m
+ [m
+[31m-# 6. Solution[m
+[32m+[m
+[32m+[m[32m# 5. TRY IT YOURSELF[m
+[32m+[m[32m# Complete these tasks BEFORE looking at Section 6.[m
+[32m+[m[32m#[m
+[32m+[m[32m# TODO 2: Find users whose role is 'admin' or 'editor'.[m
+[32m+[m[32m# TODO 3: Build the same dictionary using dict(zip(...)).[m
+[32m+[m[32m# TODO 4: Print the dictionary and the list of allowed users.[m
+[32m+[m
+[32m+[m
+[32m+[m[32m# 6. SOLUTION[m
+[32m+[m
+[32m+[m[32m# Version A - Build the dictionary using a loop.[m
+ user_to_role_a = {}[m
+[32m+[m
+ for user, role in zip(users, roles):[m
+     user_to_role_a[user] = role[m
+[31m-editors_a = [user for user, role in user_to_role_a.items() if role in {'admin', 'editor'}][m
+[32m+[m
+[32m+[m[32meditors_a = [[m
+[32m+[m[32m    user[m
+[32m+[m[32m    for user, role in user_to_role_a.items()[m
+[32m+[m[32m    if role in {'admin', 'editor'}[m
+[32m+[m[32m][m
+[32m+[m
+ print('Version A:', user_to_role_a, editors_a)[m
+ [m
+[32m+[m
+[32m+[m[32m# Version B - Build the dictionary using dict() and zip().[m
+ user_to_role_b = dict(zip(users, roles))[m
+[31m-editors_b = [user for user, role in user_to_role_b.items() if role in {'admin', 'editor'}][m
+[32m+[m
+[32m+[m[32meditors_b = [[m
+[32m+[m[32m    user[m
+[32m+[m[32m    for user, role in user_to_role_b.items()[m
+[32m+[m[32m    if role in {'admin', 'editor'}[m
+[32m+[m[32m][m
+[32m+[m
+ print('Version B:', user_to_role_b, editors_b)[m
+[31m-# Version B is concise; Version A is clearer when validation or extra work is needed.[m
+ [m
+[31m-# 7. Trace It Visually[m
+[31m-# ava + admin -> {'ava': 'admin'} -> ava is allowed.[m
+[31m-# sam + editor -> {'ava': 'admin', 'sam': 'editor'} -> sam is allowed.[m
+[31m-# mia + viewer -> complete mapping -> mia is not an editor.[m
+[32m+[m[32m# Version B is more concise.[m
+[32m+[m[32m# Version A is useful when validation or extra processing is needed.[m
+[32m+[m
+[32m+[m
+[32m+[m[32m# 7. TRACE IT VISUALLY[m
+[32m+[m
+[32m+[m[32m# Initial dictionary:[m
+[32m+[m[32m# {}[m
+[32m+[m[32m#[m
+[32m+[m[32m# Pair 1: ('ava', 'admin')[m
+[32m+[m[32m# Dictionary: {'ava': 'admin'}[m
+[32m+[m[32m# Ava is allowed to edit.[m
+[32m+[m[32m#[m
+[32m+[m[32m# Pair 2: ('sam', 'editor')[m
+[32m+[m[32m# Dictionary: {'ava': 'admin', 'sam': 'editor'}[m
+[32m+[m[32m# Sam is allowed to edit.[m
+[32m+[m[32m#[m
+[32m+[m[32m# Pair 3: ('mia', 'viewer')[m
+[32m+[m[32m# Dictionary:[m
+[32m+[m[32m# {'ava': 'admin', 'sam': 'editor', 'mia': 'viewer'}[m
+[32m+[m[32m# Mia is not allowed to edit.[m
+[32m+[m[32m#[m
+[32m+[m[32m# Final editors list: ['ava', 'sam'][m
+[32m+[m
+[32m+[m
+[32m+[m[32m# 8. WHAT IS ACTUALLY HAPPENING INTERNALLY?[m
+[32m+[m
+[32m+[m[32m# Q1: What does zip() produce from two lists?[m
+[32m+[m[32m# Q2: Does zip() produce pairs lazily?[m
+[32m+[m[32m# Q3: What happens when the input lengths differ?[m
+[32m+[m[32m# Q4: How does dict() consume the pairs?[m
+[32m+[m[32m#[m
+[32m+[m[32m# Key facts:[m
+[32m+[m[32m# - zip() pairs elements at corresponding positions.[m
+[32m+[m[32m# - zip() produces pairs lazily.[m
+[32m+[m[32m# - By default, zip() stops at the shortest input.[m
+[32m+[m[32m# - dict() consumes the pairs to build a mapping.[m
+ [m
+[31m-# 8. What Is Actually Happening Internally?[m
+[31m-# zip produces pairs lazily and stops at the shortest input. dict consumes each pair.[m
+ [m
+ # 9. THE IMPORTANT PART - THIS BECOMES...[m
+[31m-# Python: user -> role mapping[m
+[31m-# Backend: authorization lookup in an API request[m
+[31m-# Production: tenant_id + user_id -> permissions[m
+[31m-# AI / LLM: decide which tools or documents a user may access[m
+[31m-# Advanced System: multi-tenant access control [LEARN LATER][m
+ [m
+[31m-# 10. Future Code Example[m
+[32m+[m[32m# Python:[m
+[32m+[m[32m# userna
