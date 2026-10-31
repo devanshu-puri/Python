@@ -1,6 +1,5 @@
 {
   "checkpoint": "Python foundations + mental-bridge applications",
-
   "areas": [
     {
       "path": "01-python",
@@ -17,21 +16,13 @@
       "how_to_study": "Each chapter ends with something that runs: an endpoint, a query, a test. Keep the `projects/` folder for services that combine several chapters."
     },
     {
-      "path": "03-ml-foundations",
-      "emoji": "📈",
-      "title": "ML foundations",
-      "summary": "Just enough NumPy, pandas and model basics to understand embeddings, evaluation and what LLMs are built on.",
-      "how_to_study": "This is a bridge, not a full ML course. Learn the vocabulary and the evaluation mindset, then move on to LLMs."
-    },
-    {
-      "path": "04-llm-rag-agents",
+      "path": "03-llm-rag-agents",
       "emoji": "🤖",
-      "title": "LLMs, RAG & agents",
-      "summary": "Calling models, retrieving knowledge, using tools, and running all of it safely in production.",
-      "how_to_study": "Every topic should link back to a plain Python idea from `01-python`: dictionaries become metadata filters, generators become streaming, decorators become tracing."
+      "title": "AI engineering",
+      "summary": "ML foundations, LLM APIs, embeddings, retrieval, agents, evaluation and production AI.",
+      "how_to_study": "Start with the ML foundations chapters, then move through LLM basics, embeddings, RAG, agents, and evaluation. Connect each idea back to the Python and backend concepts it depends on."
     }
   ],
-
   "tracks": [
     {
       "id": "foundations",
@@ -43,14 +34,92 @@
           "summary": "The raw material every program is made of: data types, control flow and functions.",
           "folder": "01-python/01-basics",
           "topics": [
-            {"name": "Strings", "status": "done", "subtopics": ["slicing", "f-strings", "methods"], "future": "Prompt templates and text cleaning for LLM inputs", "file": "01-python/01-basics/01_strings.py"},
-            {"name": "Numeric data", "status": "done", "subtopics": ["int/float", "operators", "conversion"], "future": "Token counts, scores, and metrics", "file": "01-python/01-basics/02_numeric_data.py"},
-            {"name": "Lists, sets, tuples", "status": "done", "subtopics": ["mutability", "membership", "ordering"], "future": "Batches of documents, permission sets, immutable configs", "file": "01-python/01-basics/03_list_set_tuple.py"},
-            {"name": "Dictionaries", "status": "done", "subtopics": ["lookup", "nesting", "iteration"], "future": "JSON payloads and API records", "file": "01-python/01-basics/04_dictionaries.py"},
-            {"name": "Conditionals & booleans", "status": "done", "subtopics": ["if/elif/else", "truthiness"], "future": "Request routing and guardrail checks", "file": "01-python/01-basics/05_conditionals_booleans.py"},
-            {"name": "Loops & iterators", "status": "done", "subtopics": ["for/while", "iter/next"], "future": "Streaming tokens and retry loops", "file": "01-python/01-basics/06_loops_iterators.py"},
-            {"name": "Comprehensions", "status": "done", "subtopics": ["list", "dict", "set"], "future": "Fast data shaping in ETL and feature prep", "file": "01-python/01-basics/07_comprehensions.py"},
-            {"name": "Functions", "status": "done", "subtopics": ["args/kwargs", "return values", "scope"], "future": "Service handlers and agent tool functions", "file": "01-python/01-basics/08_functions.py"}
+            {
+              "name": "Strings",
+              "status": "done",
+              "subtopics": [
+                "slicing",
+                "f-strings",
+                "methods"
+              ],
+              "future": "Prompt templates and text cleaning for LLM inputs",
+              "file": "01-python/01-basics/01_strings.py"
+            },
+            {
+              "name": "Numeric data",
+              "status": "done",
+              "subtopics": [
+                "int/float",
+                "operators",
+                "conversion"
+              ],
+              "future": "Token counts, scores, and metrics",
+              "file": "01-python/01-basics/02_numeric_data.py"
+            },
+            {
+              "name": "Lists, sets, tuples",
+              "status": "done",
+              "subtopics": [
+                "mutability",
+                "membership",
+                "ordering"
+              ],
+              "future": "Batches of documents, permission sets, immutable configs",
+              "file": "01-python/01-basics/03_list_set_tuple.py"
+            },
+            {
+              "name": "Dictionaries",
+              "status": "done",
+              "subtopics": [
+                "lookup",
+                "nesting",
+                "iteration"
+              ],
+              "future": "JSON payloads and API records",
+              "file": "01-python/01-basics/04_dictionaries.py"
+            },
+            {
+              "name": "Conditionals & booleans",
+              "status": "done",
+              "subtopics": [
+                "if/elif/else",
+                "truthiness"
+              ],
+              "future": "Request routing and guardrail checks",
+              "file": "01-python/01-basics/05_conditionals_booleans.py"
+            },
+            {
+              "name": "Loops & iterators",
+              "status": "done",
+              "subtopics": [
+                "for/while",
+                "iter/next"
+              ],
+              "future": "Streaming tokens and retry loops",
+              "file": "01-python/01-basics/06_loops_iterators.py"
+            },
+            {
+              "name": "Comprehensions",
+              "status": "done",
+              "subtopics": [
+                "list",
+                "dict",
+                "set"
+              ],
+              "future": "Fast data shaping in ETL and feature prep",
+              "file": "01-python/01-basics/07_comprehensions.py"
+            },
+            {
+              "name": "Functions",
+              "status": "done",
+              "subtopics": [
+                "args/kwargs",
+                "return values",
+                "scope"
+              ],
+              "future": "Service handlers and agent tool functions",
+              "file": "01-python/01-basics/08_functions.py"
+            }
           ]
         }
       ]
@@ -65,10 +134,48 @@
           "summary": "Splitting code into modules, using the standard library, and reading and writing files.",
           "folder": "01-python/02-modules-and-files",
           "topics": [
-            {"name": "Modules & imports", "status": "done", "subtopics": ["`import`", "`from ... import`", "your own module"], "future": "Package layout of real services", "file": "01-python/02-modules-and-files/01_modules_library.py", "also": ["01-python/02-modules-and-files/my_module.py"]},
-            {"name": "Standard library tour", "status": "done", "subtopics": ["stdlib modules", "third-party packages"], "future": "Stdlib in real services", "file": "01-python/02-modules-and-files/02_modules_library_2.py"},
-            {"name": "Reading & writing files", "status": "done", "subtopics": ["`open()`", "file modes", "`with` blocks", "copying files"], "future": "Config files, logs, and dataset loading", "file": "01-python/02-modules-and-files/03_read_write.py"},
-            {"name": "Logging", "status": "todo", "subtopics": [], "future": "Observability in services and agents"}
+            {
+              "name": "Modules & imports",
+              "status": "done",
+              "subtopics": [
+                "`import`",
+                "`from ... import`",
+                "your own module"
+              ],
+              "future": "Package layout of real services",
+              "file": "01-python/02-modules-and-files/01_modules_library.py",
+              "also": [
+                "01-python/02-modules-and-files/my_module.py"
+              ]
+            },
+            {
+              "name": "Standard library tour",
+              "status": "done",
+              "subtopics": [
+                "stdlib modules",
+                "third-party packages"
+              ],
+              "future": "Stdlib in real services",
+              "file": "01-python/02-modules-and-files/02_modules_library_2.py"
+            },
+            {
+              "name": "Reading & writing files",
+              "status": "done",
+              "subtopics": [
+                "`open()`",
+                "file modes",
+                "`with` blocks",
+                "copying files"
+              ],
+              "future": "Config files, logs, and dataset loading",
+              "file": "01-python/02-modules-and-files/03_read_write.py"
+            },
+            {
+              "name": "Logging",
+              "status": "todo",
+              "subtopics": [],
+              "future": "Observability in services and agents"
+            }
           ]
         }
       ]
@@ -83,13 +190,74 @@
           "summary": "Bundling data and behaviour into objects.",
           "folder": "01-python/03-oop",
           "topics": [
-            {"name": "Classes & instances", "status": "done", "subtopics": ["`__init__`", "instance attributes"], "future": "Models, clients, and service objects", "file": "01-python/03-oop/01_classes_instances.py"},
-            {"name": "Class variables", "status": "done", "subtopics": ["shared state", "class vs instance attributes"], "future": "Shared config and registries", "file": "01-python/03-oop/02_class_variables.py"},
-            {"name": "Class & static methods", "status": "done", "subtopics": ["`@classmethod`", "`@staticmethod`"], "future": "Alternate constructors, e.g. Model.from_config()", "file": "01-python/03-oop/03_classmethods_staticmethods.py"},
-            {"name": "Inheritance", "status": "done", "subtopics": ["`super()`", "overriding"], "future": "Base provider classes for LLM vendors", "file": "01-python/03-oop/04_inheritance.py"},
-            {"name": "Special methods", "status": "done", "subtopics": ["`__repr__`", "dunder methods"], "future": "Readable logs and debuggable objects", "file": "01-python/03-oop/05_special_methods.py"},
-            {"name": "Property decorator", "status": "done", "subtopics": ["`@property`", "getters and setters"], "future": "Validated fields, as in Pydantic", "file": "01-python/03-oop/06_property_decorator.py"},
-            {"name": "Composition", "status": "wip", "subtopics": ["has-a vs is-a"], "future": "Agents composed of tools, memory, and a model"}
+            {
+              "name": "Classes & instances",
+              "status": "done",
+              "subtopics": [
+                "`__init__`",
+                "instance attributes"
+              ],
+              "future": "Models, clients, and service objects",
+              "file": "01-python/03-oop/01_classes_instances.py"
+            },
+            {
+              "name": "Class variables",
+              "status": "done",
+              "subtopics": [
+                "shared state",
+                "class vs instance attributes"
+              ],
+              "future": "Shared config and registries",
+              "file": "01-python/03-oop/02_class_variables.py"
+            },
+            {
+              "name": "Class & static methods",
+              "status": "done",
+              "subtopics": [
+                "`@classmethod`",
+                "`@staticmethod`"
+              ],
+              "future": "Alternate constructors, e.g. Model.from_config()",
+              "file": "01-python/03-oop/03_classmethods_staticmethods.py"
+            },
+            {
+              "name": "Inheritance",
+              "status": "done",
+              "subtopics": [
+                "`super()`",
+                "overriding"
+              ],
+              "future": "Base provider classes for LLM vendors",
+              "file": "01-python/03-oop/04_inheritance.py"
+            },
+            {
+              "name": "Special methods",
+              "status": "done",
+              "subtopics": [
+                "`__repr__`",
+                "dunder methods"
+              ],
+              "future": "Readable logs and debuggable objects",
+              "file": "01-python/03-oop/05_special_methods.py"
+            },
+            {
+              "name": "Property decorator",
+              "status": "done",
+              "subtopics": [
+                "`@property`",
+                "getters and setters"
+              ],
+              "future": "Validated fields, as in Pydantic",
+              "file": "01-python/03-oop/06_property_decorator.py"
+            },
+            {
+              "name": "Composition",
+              "status": "wip",
+              "subtopics": [
+                "has-a vs is-a"
+              ],
+              "future": "Agents composed of tools, memory, and a model"
+            }
           ]
         }
       ]
@@ -104,16 +272,104 @@
           "summary": "The language features that frameworks are built on.",
           "folder": "01-python/04-intermediate",
           "topics": [
-            {"name": "First-class functions", "status": "done", "subtopics": ["functions as values", "passing functions around"], "future": "Pluggable model and tool strategies", "file": "01-python/04-intermediate/01_first_class_functions.py"},
-            {"name": "Closures", "status": "done", "subtopics": ["enclosing scope", "factory functions"], "future": "Configured clients and per-request handlers", "file": "01-python/04-intermediate/02_closures.py"},
-            {"name": "Decorators", "status": "done", "subtopics": ["wrapping functions", "`functools.wraps`"], "future": "FastAPI routes, tracing, and auth checks", "file": "01-python/04-intermediate/03_decorators.py"},
-            {"name": "Decorators with arguments", "status": "done", "subtopics": ["decorator factories"], "future": "Retries, rate limits, and permissions as `@decorator(...)`", "file": "01-python/04-intermediate/04_decorators_with_arguments.py"},
-            {"name": "Iterators & iterables", "status": "done", "subtopics": ["`__iter__`", "`__next__`"], "future": "Streaming responses and paginated APIs", "file": "01-python/04-intermediate/05_iterators_iterables.py"},
-            {"name": "Generators", "status": "done", "subtopics": ["`yield`", "lazy evaluation"], "future": "Streaming tokens and large-file processing", "file": "01-python/04-intermediate/06_generators.py"},
-            {"name": "Exception handling", "status": "done", "subtopics": ["try/except/finally", "custom exceptions"], "future": "API error responses and retry logic", "file": "01-python/04-intermediate/07_exception_handling.py"},
-            {"name": "Type hints", "status": "done", "subtopics": ["annotations", "`Optional` and unions"], "future": "Typed API contracts and Pydantic models", "file": "01-python/04-intermediate/08_type_hints.py"},
-            {"name": "Async I/O", "status": "wip", "subtopics": ["`async` / `await`", "event loop"], "future": "Concurrent model and tool calls", "file": "01-python/04-intermediate/09_async_io.py"},
-            {"name": "Validation", "status": "todo", "subtopics": ["dataclasses", "Pydantic"], "future": "Structured outputs from models"}
+            {
+              "name": "First-class functions",
+              "status": "done",
+              "subtopics": [
+                "functions as values",
+                "passing functions around"
+              ],
+              "future": "Pluggable model and tool strategies",
+              "file": "01-python/04-intermediate/01_first_class_functions.py"
+            },
+            {
+              "name": "Closures",
+              "status": "done",
+              "subtopics": [
+                "enclosing scope",
+                "factory functions"
+              ],
+              "future": "Configured clients and per-request handlers",
+              "file": "01-python/04-intermediate/02_closures.py"
+            },
+            {
+              "name": "Decorators",
+              "status": "done",
+              "subtopics": [
+                "wrapping functions",
+                "`functools.wraps`"
+              ],
+              "future": "FastAPI routes, tracing, and auth checks",
+              "file": "01-python/04-intermediate/03_decorators.py"
+            },
+            {
+              "name": "Decorators with arguments",
+              "status": "done",
+              "subtopics": [
+                "decorator factories"
+              ],
+              "future": "Retries, rate limits, and permissions as `@decorator(...)`",
+              "file": "01-python/04-intermediate/04_decorators_with_arguments.py"
+            },
+            {
+              "name": "Iterators & iterables",
+              "status": "done",
+              "subtopics": [
+                "`__iter__`",
+                "`__next__`"
+              ],
+              "future": "Streaming responses and paginated APIs",
+              "file": "01-python/04-intermediate/05_iterators_iterables.py"
+            },
+            {
+              "name": "Generators",
+              "status": "done",
+              "subtopics": [
+                "`yield`",
+                "lazy evaluation"
+              ],
+              "future": "Streaming tokens and large-file processing",
+              "file": "01-python/04-intermediate/06_generators.py"
+            },
+            {
+              "name": "Exception handling",
+              "status": "done",
+              "subtopics": [
+                "try/except/finally",
+                "custom exceptions"
+              ],
+              "future": "API error responses and retry logic",
+              "file": "01-python/04-intermediate/07_exception_handling.py"
+            },
+            {
+              "name": "Type hints",
+              "status": "done",
+              "subtopics": [
+                "annotations",
+                "`Optional` and unions"
+              ],
+              "future": "Typed API contracts and Pydantic models",
+              "file": "01-python/04-intermediate/08_type_hints.py"
+            },
+            {
+              "name": "Async I/O",
+              "status": "wip",
+              "subtopics": [
+                "`async` / `await`",
+                "event loop"
+              ],
+              "future": "Concurrent model and tool calls",
+              "file": "01-python/04-intermediate/09_async_io.py"
+            },
+            {
+              "name": "Validation",
+              "status": "todo",
+              "subtopics": [
+                "dataclasses",
+                "Pydantic"
+              ],
+              "future": "Structured outputs from models"
+            }
           ]
         }
       ]
@@ -128,16 +384,100 @@
           "summary": "Ten small scenarios that connect syntax to systems.",
           "folder": "01-python/05-applied-exercises",
           "topics": [
-            {"name": "01 Zip & dictionary mapping", "status": "done", "subtopics": ["zip", "filtering"], "future": "Authorization and tool access", "file": "01-python/05-applied-exercises/01_zip_dictionary_mapping.py", "also": ["01-python/05-applied-exercises/01_zip_dictionary_mapping_solution.py"]},
-            {"name": "02 Set permissions", "status": "done", "subtopics": ["set ops"], "future": "Permission checks", "file": "01-python/05-applied-exercises/02_set_permissions.py"},
-            {"name": "03 Filter users", "status": "done", "subtopics": ["predicates"], "future": "Query-like selection / metadata retrieval", "file": "01-python/05-applied-exercises/03_filter_users.py"},
-            {"name": "04 Transform API data", "status": "done", "subtopics": ["map"], "future": "API response shaping", "file": "01-python/05-applied-exercises/04_transform_api_data.py"},
-            {"name": "05 Group users by role", "status": "done", "subtopics": ["grouping"], "future": "Aggregation and reporting", "file": "01-python/05-applied-exercises/05_group_users_by_role.py"},
-            {"name": "06 JSON data processing", "status": "done", "subtopics": ["json"], "future": "External data boundaries", "file": "01-python/05-applied-exercises/06_json_data_processing.py"},
-            {"name": "07 Function as data", "status": "done", "subtopics": ["callbacks"], "future": "Pluggable model/tool strategies", "file": "01-python/05-applied-exercises/07_function_as_data.py"},
-            {"name": "08 Decorator logging", "status": "done", "subtopics": ["decorators"], "future": "Tracing and observability", "file": "01-python/05-applied-exercises/08_decorator_logging.py"},
-            {"name": "09 Generator data", "status": "done", "subtopics": ["yield"], "future": "Streaming and memory efficiency", "file": "01-python/05-applied-exercises/09_generator_large_data.py"},
-            {"name": "10 Error-handling pipeline", "status": "done", "subtopics": ["try/except"], "future": "Resilient processing", "file": "01-python/05-applied-exercises/10_error_handling_pipeline.py"}
+            {
+              "name": "01 Zip & dictionary mapping",
+              "status": "done",
+              "subtopics": [
+                "zip",
+                "filtering"
+              ],
+              "future": "Authorization and tool access",
+              "file": "01-python/05-applied-exercises/01_zip_dictionary_mapping.py",
+              "also": [
+                "01-python/05-applied-exercises/01_zip_dictionary_mapping_solution.py"
+              ]
+            },
+            {
+              "name": "02 Set permissions",
+              "status": "done",
+              "subtopics": [
+                "set ops"
+              ],
+              "future": "Permission checks",
+              "file": "01-python/05-applied-exercises/02_set_permissions.py"
+            },
+            {
+              "name": "03 Filter users",
+              "status": "done",
+              "subtopics": [
+                "predicates"
+              ],
+              "future": "Query-like selection / metadata retrieval",
+              "file": "01-python/05-applied-exercises/03_filter_users.py"
+            },
+            {
+              "name": "04 Transform API data",
+              "status": "done",
+              "subtopics": [
+                "map"
+              ],
+              "future": "API response shaping",
+              "file": "01-python/05-applied-exercises/04_transform_api_data.py"
+            },
+            {
+              "name": "05 Group users by role",
+              "status": "done",
+              "subtopics": [
+                "grouping"
+              ],
+              "future": "Aggregation and reporting",
+              "file": "01-python/05-applied-exercises/05_group_users_by_role.py"
+            },
+            {
+              "name": "06 JSON data processing",
+              "status": "done",
+              "subtopics": [
+                "json"
+              ],
+              "future": "External data boundaries",
+              "file": "01-python/05-applied-exercises/06_json_data_processing.py"
+            },
+            {
+              "name": "07 Function as data",
+              "status": "done",
+              "subtopics": [
+                "callbacks"
+              ],
+              "future": "Pluggable model/tool strategies",
+              "file": "01-python/05-applied-exercises/07_function_as_data.py"
+            },
+            {
+              "name": "08 Decorator logging",
+              "status": "done",
+              "subtopics": [
+                "decorators"
+              ],
+              "future": "Tracing and observability",
+              "file": "01-python/05-applied-exercises/08_decorator_logging.py"
+            },
+            {
+              "name": "09 Generator data",
+              "status": "done",
+              "subtopics": [
+                "yield"
+              ],
+              "future": "Streaming and memory efficiency",
+              "file": "01-python/05-applied-exercises/09_generator_large_data.py"
+            },
+            {
+              "name": "10 Error-handling pipeline",
+              "status": "done",
+              "subtopics": [
+                "try/except"
+              ],
+              "future": "Resilient processing",
+              "file": "01-python/05-applied-exercises/10_error_handling_pipeline.py"
+            }
           ]
         }
       ]
@@ -152,9 +492,35 @@
           "summary": "How clients and servers talk: requests, responses and status codes.",
           "folder": "02-backend/01-http-and-apis",
           "topics": [
-            {"name": "HTTP basics", "status": "todo", "subtopics": ["requests and responses", "status codes", "headers"], "future": "Calling LLM provider APIs"},
-            {"name": "REST design", "status": "todo", "subtopics": ["resources", "verbs", "pagination"], "future": "Tool and webhook APIs"},
-            {"name": "Handlers & pipelines", "status": "wip", "subtopics": ["handlers", "pipelines"], "future": "FastAPI services"}
+            {
+              "name": "HTTP basics",
+              "status": "todo",
+              "subtopics": [
+                "requests and responses",
+                "status codes",
+                "headers"
+              ],
+              "future": "Calling LLM provider APIs"
+            },
+            {
+              "name": "REST design",
+              "status": "todo",
+              "subtopics": [
+                "resources",
+                "verbs",
+                "pagination"
+              ],
+              "future": "Tool and webhook APIs"
+            },
+            {
+              "name": "Handlers & pipelines",
+              "status": "wip",
+              "subtopics": [
+                "handlers",
+                "pipelines"
+              ],
+              "future": "FastAPI services"
+            }
           ]
         },
         {
@@ -162,9 +528,33 @@
           "summary": "Serving Python functions over HTTP.",
           "folder": "02-backend/02-fastapi",
           "topics": [
-            {"name": "First FastAPI service", "status": "todo", "subtopics": ["routes", "path and query parameters"], "future": "Serving models and RAG endpoints"},
-            {"name": "Request & response models", "status": "todo", "subtopics": ["Pydantic models", "validation errors"], "future": "Structured LLM outputs"},
-            {"name": "Dependencies & middleware", "status": "todo", "subtopics": ["dependency injection", "middleware"], "future": "Auth, logging, and rate-limiting layers"}
+            {
+              "name": "First FastAPI service",
+              "status": "todo",
+              "subtopics": [
+                "routes",
+                "path and query parameters"
+              ],
+              "future": "Serving models and RAG endpoints"
+            },
+            {
+              "name": "Request & response models",
+              "status": "todo",
+              "subtopics": [
+                "Pydantic models",
+                "validation errors"
+              ],
+              "future": "Structured LLM outputs"
+            },
+            {
+              "name": "Dependencies & middleware",
+              "status": "todo",
+              "subtopics": [
+                "dependency injection",
+                "middleware"
+              ],
+              "future": "Auth, logging, and rate-limiting layers"
+            }
           ]
         },
         {
@@ -172,9 +562,34 @@
           "summary": "Storing and querying data reliably.",
           "folder": "02-backend/03-databases",
           "topics": [
-            {"name": "SQL basics", "status": "todo", "subtopics": ["tables", "joins", "indexes"], "future": "Metadata and application data"},
-            {"name": "SQLAlchemy", "status": "todo", "subtopics": ["models", "sessions"], "future": "Repository-style data access"},
-            {"name": "Redis & caching", "status": "todo", "subtopics": ["key-value", "TTL"], "future": "Caching LLM responses and rate limits"}
+            {
+              "name": "SQL basics",
+              "status": "todo",
+              "subtopics": [
+                "tables",
+                "joins",
+                "indexes"
+              ],
+              "future": "Metadata and application data"
+            },
+            {
+              "name": "SQLAlchemy",
+              "status": "todo",
+              "subtopics": [
+                "models",
+                "sessions"
+              ],
+              "future": "Repository-style data access"
+            },
+            {
+              "name": "Redis & caching",
+              "status": "todo",
+              "subtopics": [
+                "key-value",
+                "TTL"
+              ],
+              "future": "Caching LLM responses and rate limits"
+            }
           ]
         },
         {
@@ -182,8 +597,25 @@
           "summary": "Knowing who is calling and what they may do.",
           "folder": "02-backend/04-auth-and-security",
           "topics": [
-            {"name": "Authentication", "status": "todo", "subtopics": ["password hashing", "JWT"], "future": "API keys and user sessions"},
-            {"name": "Authorization", "status": "todo", "subtopics": ["roles", "permissions", "multi-tenancy"], "future": "Access control for RAG and agent tools"}
+            {
+              "name": "Authentication",
+              "status": "todo",
+              "subtopics": [
+                "password hashing",
+                "JWT"
+              ],
+              "future": "API keys and user sessions"
+            },
+            {
+              "name": "Authorization",
+              "status": "todo",
+              "subtopics": [
+                "roles",
+                "permissions",
+                "multi-tenancy"
+              ],
+              "future": "Access control for RAG and agent tools"
+            }
           ]
         },
         {
@@ -191,8 +623,24 @@
           "summary": "Proving the code works before users find out it doesn't.",
           "folder": "02-backend/05-testing",
           "topics": [
-            {"name": "pytest basics", "status": "todo", "subtopics": ["asserts", "fixtures"], "future": "Regression tests for prompts and pipelines"},
-            {"name": "Mocking & API tests", "status": "todo", "subtopics": ["mocks", "test client"], "future": "Testing LLM calls without paying for them"}
+            {
+              "name": "pytest basics",
+              "status": "todo",
+              "subtopics": [
+                "asserts",
+                "fixtures"
+              ],
+              "future": "Regression tests for prompts and pipelines"
+            },
+            {
+              "name": "Mocking & API tests",
+              "status": "todo",
+              "subtopics": [
+                "mocks",
+                "test client"
+              ],
+              "future": "Testing LLM calls without paying for them"
+            }
           ]
         },
         {
@@ -200,9 +648,32 @@
           "summary": "Packaging and shipping a service.",
           "folder": "02-backend/06-docker-and-deployment",
           "topics": [
-            {"name": "Docker basics", "status": "todo", "subtopics": ["images", "containers"], "future": "Reproducible AI services"},
-            {"name": "Config & secrets", "status": "todo", "subtopics": ["environment variables", "`.env` files"], "future": "Keeping API keys out of code"},
-            {"name": "CI/CD", "status": "todo", "subtopics": ["GitHub Actions"], "future": "Automated tests and deploys"}
+            {
+              "name": "Docker basics",
+              "status": "todo",
+              "subtopics": [
+                "images",
+                "containers"
+              ],
+              "future": "Reproducible AI services"
+            },
+            {
+              "name": "Config & secrets",
+              "status": "todo",
+              "subtopics": [
+                "environment variables",
+                "`.env` files"
+              ],
+              "future": "Keeping API keys out of code"
+            },
+            {
+              "name": "CI/CD",
+              "status": "todo",
+              "subtopics": [
+                "GitHub Actions"
+              ],
+              "future": "Automated tests and deploys"
+            }
           ]
         }
       ]
@@ -215,19 +686,52 @@
         {
           "title": "NumPy & pandas",
           "summary": "Working with arrays and tables of data.",
-          "folder": "03-ml-foundations/01-numpy-and-pandas",
+          "folder": "03-llm-rag-agents/01-ml-foundations/01-numpy-and-pandas",
           "topics": [
-            {"name": "NumPy arrays", "status": "todo", "subtopics": ["arrays", "vectorised maths"], "future": "Embeddings are just vectors"},
-            {"name": "pandas DataFrames", "status": "todo", "subtopics": ["load", "clean", "group"], "future": "Dataset prep and evaluation tables"}
+            {
+              "name": "NumPy arrays",
+              "status": "todo",
+              "subtopics": [
+                "arrays",
+                "vectorised maths"
+              ],
+              "future": "Embeddings are just vectors"
+            },
+            {
+              "name": "pandas DataFrames",
+              "status": "todo",
+              "subtopics": [
+                "load",
+                "clean",
+                "group"
+              ],
+              "future": "Dataset prep and evaluation tables"
+            }
           ]
         },
         {
           "title": "Model basics",
           "summary": "What it means for a model to learn, and how to tell if it did.",
-          "folder": "03-ml-foundations/02-model-basics",
+          "folder": "03-llm-rag-agents/01-ml-foundations/02-model-basics",
           "topics": [
-            {"name": "Train, test & evaluate", "status": "todo", "subtopics": ["data splits", "metrics"], "future": "Evaluation mindset for LLM systems"},
-            {"name": "Simple models", "status": "todo", "subtopics": ["scikit-learn", "overfitting"], "future": "Understanding what a model actually learns"}
+            {
+              "name": "Train, test & evaluate",
+              "status": "todo",
+              "subtopics": [
+                "data splits",
+                "metrics"
+              ],
+              "future": "Evaluation mindset for LLM systems"
+            },
+            {
+              "name": "Simple models",
+              "status": "todo",
+              "subtopics": [
+                "scikit-learn",
+                "overfitting"
+              ],
+              "future": "Understanding what a model actually learns"
+            }
           ]
         }
       ]
@@ -240,38 +744,113 @@
         {
           "title": "LLM Basics",
           "summary": "Talking to a model from code.",
-          "folder": "04-llm-rag-agents/01-llm-basics",
+          "folder": "03-llm-rag-agents/02-llm-basics",
           "topics": [
-            {"name": "LLM APIs & prompting", "status": "todo", "subtopics": ["chat messages", "system prompts", "parameters"], "future": "Every AI feature starts here"},
-            {"name": "Structured output", "status": "todo", "subtopics": ["JSON output", "schema validation"], "future": "Reliable parsing of model responses"}
+            {
+              "name": "LLM APIs & prompting",
+              "status": "todo",
+              "subtopics": [
+                "chat messages",
+                "system prompts",
+                "parameters"
+              ],
+              "future": "Every AI feature starts here"
+            },
+            {
+              "name": "Structured output",
+              "status": "todo",
+              "subtopics": [
+                "JSON output",
+                "schema validation"
+              ],
+              "future": "Reliable parsing of model responses"
+            }
           ]
         },
         {
           "title": "Embeddings & Vector Search",
           "summary": "Turning text into vectors and finding what is similar.",
-          "folder": "04-llm-rag-agents/02-embeddings-and-vector-search",
+          "folder": "03-llm-rag-agents/03-embeddings-and-vector-search",
           "topics": [
-            {"name": "Embeddings", "status": "todo", "subtopics": ["text to vectors", "similarity"], "future": "Semantic search and clustering"},
-            {"name": "Vector search", "status": "todo", "subtopics": ["nearest neighbours", "metadata filters"], "future": "Retrieval for RAG"}
+            {
+              "name": "Embeddings",
+              "status": "todo",
+              "subtopics": [
+                "text to vectors",
+                "similarity"
+              ],
+              "future": "Semantic search and clustering"
+            },
+            {
+              "name": "Vector search",
+              "status": "todo",
+              "subtopics": [
+                "nearest neighbours",
+                "metadata filters"
+              ],
+              "future": "Retrieval for RAG"
+            }
           ]
         },
         {
           "title": "RAG",
           "summary": "Giving a model the right knowledge at the right time.",
-          "folder": "04-llm-rag-agents/03-rag",
+          "folder": "03-llm-rag-agents/04-rag",
           "topics": [
-            {"name": "Chunking & retrieval", "status": "todo", "subtopics": ["splitting documents", "top-k", "metadata filtering"], "future": "Document Q&A over private data"},
-            {"name": "RAG pipeline", "status": "todo", "subtopics": ["retrieve", "augment", "generate"], "future": "End-to-end grounded answers"}
+            {
+              "name": "Chunking & retrieval",
+              "status": "todo",
+              "subtopics": [
+                "splitting documents",
+                "top-k",
+                "metadata filtering"
+              ],
+              "future": "Document Q&A over private data"
+            },
+            {
+              "name": "RAG pipeline",
+              "status": "todo",
+              "subtopics": [
+                "retrieve",
+                "augment",
+                "generate"
+              ],
+              "future": "End-to-end grounded answers"
+            }
           ]
         },
         {
           "title": "Agents & Tool Use",
           "summary": "Letting a model call functions and make decisions in a loop.",
-          "folder": "04-llm-rag-agents/04-agents-and-tool-use",
+          "folder": "03-llm-rag-agents/05-agents-and-tool-use",
           "topics": [
-            {"name": "Function calling", "status": "todo", "subtopics": ["tool schemas", "tool permissions"], "future": "Models that act, not just talk"},
-            {"name": "Agent loop", "status": "todo", "subtopics": ["plan, act, observe", "memory"], "future": "Multi-step task automation"},
-            {"name": "MCP tools", "status": "todo", "subtopics": ["servers", "tools and resources"], "future": "Standard way to plug tools into models"}
+            {
+              "name": "Function calling",
+              "status": "todo",
+              "subtopics": [
+                "tool schemas",
+                "tool permissions"
+              ],
+              "future": "Models that act, not just talk"
+            },
+            {
+              "name": "Agent loop",
+              "status": "todo",
+              "subtopics": [
+                "plan, act, observe",
+                "memory"
+              ],
+              "future": "Multi-step task automation"
+            },
+            {
+              "name": "MCP tools",
+              "status": "todo",
+              "subtopics": [
+                "servers",
+                "tools and resources"
+              ],
+              "future": "Standard way to plug tools into models"
+            }
           ]
         }
       ]
@@ -284,34 +863,67 @@
         {
           "title": "Evaluation & Observability",
           "summary": "Knowing whether an AI system is good, and seeing what it does in production.",
-          "folder": "04-llm-rag-agents/05-evaluation-and-observability",
+          "folder": "03-llm-rag-agents/06-evaluation-and-observability",
           "topics": [
-            {"name": "Evaluation", "status": "todo", "subtopics": ["test sets", "LLM-as-judge"], "future": "Catching regressions before users do"},
-            {"name": "Tracing & observability", "status": "todo", "subtopics": ["logs", "traces", "cost tracking"], "future": "Debugging agents and RAG in production"},
-            {"name": "Guardrails & safety", "status": "todo", "subtopics": ["input checks", "output validation"], "future": "Safe tool use and data access"}
+            {
+              "name": "Evaluation",
+              "status": "todo",
+              "subtopics": [
+                "test sets",
+                "LLM-as-judge"
+              ],
+              "future": "Catching regressions before users do"
+            },
+            {
+              "name": "Tracing & observability",
+              "status": "todo",
+              "subtopics": [
+                "logs",
+                "traces",
+                "cost tracking"
+              ],
+              "future": "Debugging agents and RAG in production"
+            },
+            {
+              "name": "Guardrails & safety",
+              "status": "todo",
+              "subtopics": [
+                "input checks",
+                "output validation"
+              ],
+              "future": "Safe tool use and data access"
+            }
           ]
         }
       ]
     }
   ],
-
   "projects": [
     {
       "name": "Personal Expense CLI",
       "path": "01-python/projects/personal_expense_cli",
       "status": "done",
       "summary": "Track expenses from the terminal, stored as JSON.",
-      "concepts": ["Dictionaries", "Functions", "Reading & writing files", "Exception handling", "06 JSON data processing"]
+      "concepts": [
+        "Dictionaries",
+        "Functions",
+        "Reading & writing files",
+        "Exception handling",
+        "06 JSON data processing"
+      ]
     },
     {
       "name": "Smart File Organizer",
       "path": "01-python/projects/smart_file_organizer",
       "status": "planned",
       "summary": "Sort a messy folder into tidy categories.",
-      "concepts": ["Reading & writing files", "Conditionals & booleans", "Modules & imports"]
+      "concepts": [
+        "Reading & writing files",
+        "Conditionals & booleans",
+        "Modules & imports"
+      ]
     }
   ],
-
   "ignore": [
     "*/projects/*",
     "*/__init__.py"
